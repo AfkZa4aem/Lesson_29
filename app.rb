@@ -12,6 +12,9 @@ end
 class Barber < ActiveRecord::Base
 end
 
+class Contact < ActiveRecord::Base
+end
+
 before do
 	@barbers = Barber.order "created_at DESC"
 end
@@ -47,4 +50,13 @@ end
 
 get '/contacts' do
 	erb :contacts
+end
+
+post '/contacts' do
+	@email = params[:email]
+	@message = params[:message]
+	
+	Contact.create( email: @email, message: @message)
+
+	erb "Thank you we will contact you"
 end

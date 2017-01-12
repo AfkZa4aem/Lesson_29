@@ -1,2 +1,13 @@
 <h2>Contact us:</h2>
 
+<form action="/contacts" method="POST" role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+  	<label for="textarea">Message</label>
+  	<textarea name="message" class="form-control" rows="3" placeholder="Enter your message"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Send</button>
+</form>
